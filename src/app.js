@@ -1,20 +1,26 @@
 import "bootstrap";
 import "./style.css";
-import { startTransition } from "react";
+
+
+import "./assets/img/rigo-baby.jpg";
+import "./assets/img/4geeks.ico";
+
 window.onload = function() {
   //write your code here
   let pronoun = ["the","my","your"];
-  let adj = ["big","good","ugly"];
-  let noun = ["opossum","shark","crow"];
+  let adj = ["Last","Good","Ugly"];
+  let noun = ["Mofongo","Monkey","Cabinet"];
+  let extensions = ["net","key","go"];
   let domain = "";
+  //
   for (let itemPronoun of pronoun){
-    domain = itemPronoun;
     for (let itemAdj of adj){
-      domain = domain + itemAdj;
-      for (let itemDomain of pronoun){
-        domain = domain + itemDomain;
+      for (let itemNoun of noun){
+        for (let itemExtensions of extensions){
+          domain = itemPronoun + itemAdj + itemNoun + "." + itemExtensions;
+          console.log(domain);
+        }
       }
     }
-    console.log(domain);
   }
 };
