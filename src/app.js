@@ -1,4 +1,5 @@
 const DOMAINS = document.getElementById("allDomains");
+
 window.onload = function() {
   let pronoun = ["the","my","your"];
   let adj = ["Best","Good","Ugly"];
@@ -13,16 +14,19 @@ window.onload = function() {
           if (domainList != ""){
             domainList += " | ";
           }
-          //We check if the extension matches the ending of the nouns and if it does we skip it to do the play of words with the extension
-          if (itemNoun.slice(-itemExtensions.length) == itemExtensions){
-            domainList += itemPronoun + itemAdj + itemNoun.slice(0,itemNoun.length - itemExtensions.length) + "." + itemExtensions + " | ";
-            console.log(itemPronoun + itemAdj + itemNoun.slice(0,itemNoun.length - itemExtensions.length) + "." + itemExtensions);
-          }
-          domainList += itemPronoun + itemAdj + itemNoun + "." + itemExtensions;
-          console.log(itemPronoun + itemAdj + itemNoun + "." + itemExtensions);
+          domainList += generateDomain(itemPronoun, itemAdj,itemNoun,itemExtensions);
         }
       }
     }
   }
   DOMAINS.innerHTML = domainList;
 };
+
+function generateDomain(domainPronun, domainAdj,domainNoun,domainExtension){
+  let wordplay = ""
+  if (domainNoun.slice(-domainExtension.length) == domainExtension){
+   wordplay =  domainPronun + domainAdj + domainNoun.slice(0,domainNoun.length - domainExtension.length) + "." + domainExtension;
+  }
+  if (wordplay != "") return domainPronun + domainAdj + domainNoun + "." + domainExtension + " | " + wordplay;
+  return domainPronun + domainAdj + domainNoun + "." + domainExtension;
+}
