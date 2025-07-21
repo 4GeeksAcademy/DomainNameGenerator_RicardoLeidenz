@@ -3,7 +3,7 @@ const DOMAINS = document.getElementById("allDomains");
 window.onload = function() {
   let pronoun = ["the","my","your"];
   let adj = ["Best","Good","Ugly"];
-  let noun = ["Mofongo","Monkey","Cabinet"];
+  let noun = ["Windigo","Monkey","Cabinet"];
   let extensions = ["net","key","go"];
   let domainList = "";
   //We cycle through all pronouns, adjetives, nouns and extensions to print all possible combinations
