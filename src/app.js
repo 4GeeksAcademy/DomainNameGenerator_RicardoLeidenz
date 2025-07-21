@@ -1,11 +1,20 @@
 import "bootstrap";
 import "./style.css";
-
-
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
+import { startTransition } from "react";
 window.onload = function() {
   //write your code here
-  console.log("Hello Rigo from the console!");
+  let pronoun = ["the","my","your"];
+  let adj = ["big","good","ugly"];
+  let noun = ["opossum","shark","crow"];
+  let domain = "";
+  for (let itemPronoun of pronoun){
+    domain = itemPronoun;
+    for (let itemAdj of adj){
+      domain = domain + itemAdj;
+      for (let itemDomain of pronoun){
+        domain = domain + itemDomain;
+      }
+    }
+    console.log(domain);
+  }
 };
