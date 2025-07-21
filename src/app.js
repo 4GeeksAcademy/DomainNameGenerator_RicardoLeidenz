@@ -22,7 +22,7 @@ window.onload = function() {
             domain = itemPronoun + itemAdj + itemNoun.slice(0,itemNoun.length - itemExtensions.length) + "." + itemExtensions;
             console.log(domain);
           }
-          //else just print like normal
+          //Else just print like normal
           else{
           domain = itemPronoun + itemAdj + itemNoun + "." + itemExtensions;
           console.log(domain);
